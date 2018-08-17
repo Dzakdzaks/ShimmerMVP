@@ -1,4 +1,4 @@
-package id.co.dzaky.shimmermvp.ui;
+package id.co.dzaky.shimmermvp.ui.member;
 
 import java.util.List;
 

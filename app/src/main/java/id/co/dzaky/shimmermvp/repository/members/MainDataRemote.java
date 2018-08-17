@@ -1,4 +1,4 @@
-package id.co.dzaky.shimmermvp.repository;
+package id.co.dzaky.shimmermvp.repository.members;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

@@ -1,10 +1,10 @@
-package id.co.dzaky.shimmermvp.ui;
+package id.co.dzaky.shimmermvp.ui.member;
 
 import java.util.List;
 
 import id.co.dzaky.shimmermvp.model.member.TeamJItem;
-import id.co.dzaky.shimmermvp.repository.MainDataResource;
-import id.co.dzaky.shimmermvp.repository.MainRepository;
+import id.co.dzaky.shimmermvp.repository.members.MainDataResource;
+import id.co.dzaky.shimmermvp.repository.members.MainRepository;
 
 public class MainPresenter implements MainContract.MainPresenter{
 

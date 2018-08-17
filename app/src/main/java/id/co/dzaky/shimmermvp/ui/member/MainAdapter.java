@@ -1,7 +1,9 @@
-package id.co.dzaky.shimmermvp.ui;
+package id.co.dzaky.shimmermvp.ui.member;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +19,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.dzaky.shimmermvp.R;
 import id.co.dzaky.shimmermvp.model.member.TeamJItem;
+import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberDataResource;
+import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberRemote;
+import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberRepository;
+import id.co.dzaky.shimmermvp.ui.detailmember.DetailMember;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     Context context;
     List<TeamJItem> menuResponseList;
+    DetailMemberRemote detailMemberRemote;
+
 
 
     public MainAdapter(Context context, List<TeamJItem> menuResponseList) {
@@ -34,6 +42,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         ImageView thumbnail;
         @BindView(R.id.name)
         TextView name;
+        @BindView(R.id.cardList)
+        CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -50,12 +60,21 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(@NonNull MainAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull MainAdapter.ViewHolder viewHolder, final int i) {
         final TeamJItem teamJ = menuResponseList.get(i);
         viewHolder.name.setText(teamJ.getSurname());
         Glide.with(context)
                 .load(teamJ.getImage())
                 .into(viewHolder.thumbnail);
+        final int id = teamJ.getId();
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, DetailMember.class);
+                i.putExtra("id", id);
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override

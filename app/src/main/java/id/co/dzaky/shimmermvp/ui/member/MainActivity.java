@@ -1,4 +1,4 @@
-package id.co.dzaky.shimmermvp.ui;
+package id.co.dzaky.shimmermvp.ui.member;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.dzaky.shimmermvp.R;
 import id.co.dzaky.shimmermvp.model.member.TeamJItem;
-import id.co.dzaky.shimmermvp.repository.MainRepositoryInject;
+import id.co.dzaky.shimmermvp.repository.members.MainRepositoryInject;
 
 public class MainActivity extends AppCompatActivity implements MainContract.MainView {
 
