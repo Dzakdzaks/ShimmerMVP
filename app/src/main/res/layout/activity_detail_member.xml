@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".ui.detailmember.DetailMember">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/text_margin"-->
+        <!--android:text="@string/large_text" />-->
+        <TextView
+            android:id="@+id/tvSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Surname :"
+            android:textColor="@color/item_name"
+            android:textSize="@dimen/name" />
+
+        <TextView
+            android:id="@+id/tvNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nickname : "
+            android:textColor="@color/item_name"
+            android:textSize="@dimen/name" />
+
+        <TextView
+            android:id="@+id/tvBirthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Birthday : "
+            android:textColor="@color/item_name"
+            android:textSize="@dimen/name" />
+
+        <TextView
+            android:id="@+id/tvBlood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blood Type : "
+            android:textColor="@color/item_name"
+            android:textSize="@dimen/name" />
+
+        <TextView
+            android:id="@+id/tvHoroskop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horoskop : "
+            android:textColor="@color/item_name"
+            android:textSize="@dimen/name" />
+
+        <TextView
+            android:id="@+id/tvHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Height : "
+            android:textColor="@color/item_name"
+            android:textSize="@dimen/name" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
