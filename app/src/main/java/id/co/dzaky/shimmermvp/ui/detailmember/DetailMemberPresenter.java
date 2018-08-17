@@ -21,8 +21,9 @@ public class DetailMemberPresenter implements DetailMemberContract.DetailMemberP
     public void getData(int id) {
         detailMemberRepository.getData(id, new DetailMemberDataResource.DataCallback() {
             @Override
-            public void onSucces(String surname, String nickname, String birthday, String blood, String horoskop, String height, String twitterLink, String igLink, String msg) {
-                memberView.onSucces(surname, nickname, birthday, blood, horoskop, height, twitterLink, igLink, msg);
+            public void onSucces(String surname, String nickname, String birthday, String blood, String horoskop, String height, String twitterLink, String igLink, String
+                    vLink, String msg) {
+                memberView.onSucces(surname, nickname, birthday, blood, horoskop, height, twitterLink, igLink, vLink, msg);
             }
 
             @Override

@@ -41,8 +41,9 @@ public class DetailMemberRemote implements DetailMemberDataResource {
                         String height = detailItems.get(0).getHeight();
                         String twitterLink = detailItems.get(0).getTwitterLink();
                         String igLink = detailItems.get(0).getInstagramLink();
+                        String vlink = detailItems.get(0).getVideoLink();
                         Log.i("Response Detail ", String.valueOf(detailItems.toString()));
-                        dataCallback.onSucces(surname, nickname, birthday, blood, horoskop, height, twitterLink, igLink, "Success");
+                        dataCallback.onSucces(surname, nickname, birthday, blood, horoskop, height, twitterLink, igLink, vlink, "Success");
                     }
 
                 } catch (Exception e) {
