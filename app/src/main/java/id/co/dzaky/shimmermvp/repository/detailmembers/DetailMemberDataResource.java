@@ -13,7 +13,7 @@ public interface DetailMemberDataResource {
 
     interface DataCallback {
 
-        void onSucces(String surname, String nickname, String birthday, String blood, String horoskop, String height, String msg);
+        void onSucces(String surname, String nickname, String birthday, String blood, String horoskop, String height, String twitterLink, String igLink, String msg);
 
         void onError(String msg);
 

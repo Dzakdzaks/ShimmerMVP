@@ -10,7 +10,7 @@ import id.co.dzaky.shimmermvp.ui.member.MainContract;
 public class DetailMemberContract {
     public interface DetailMemberView {
 
-        void onSucces(String surname, String nickname, String birthday, String blood, String horoskop, String height, String msg);
+        void onSucces(String surname, String nickname, String birthday, String blood, String horoskop, String height, String twitterLink, String igLink, String msg);
 
         void onError(String msg);
     }

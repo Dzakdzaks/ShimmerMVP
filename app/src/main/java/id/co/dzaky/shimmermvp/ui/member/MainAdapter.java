@@ -62,16 +62,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.ViewHolder viewHolder, final int i) {
         final TeamJItem teamJ = menuResponseList.get(i);
+        final int id = teamJ.getId();
+        final String img = teamJ.getImage();
         viewHolder.name.setText(teamJ.getSurname());
         Glide.with(context)
-                .load(teamJ.getImage())
+                .load(img)
                 .into(viewHolder.thumbnail);
-        final int id = teamJ.getId();
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context, DetailMember.class);
                 i.putExtra("id", id);
+                i.putExtra("image", img);
                 context.startActivity(i);
             }
         });
