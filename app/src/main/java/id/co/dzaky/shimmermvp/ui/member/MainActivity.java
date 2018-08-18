@@ -133,6 +133,9 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
     }
 
     private void setView() {
+        relativeTeamJ.setVisibility(View.GONE);
+        relativeTeamK.setVisibility(View.GONE);
+        relativeTeamT.setVisibility(View.GONE);
         menuResponseList = new ArrayList<>();
         jPresenter = new JPresenter(MainRepositoryInject.provideToInjectJ(getApplicationContext()));
         jPresenter.onAttachView(this);
@@ -144,19 +147,24 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         relativeTeamJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                if (recyclerView.getVisibility() == View.GONE) {
-                    recyclerView.setVisibility(View.VISIBLE);
-                    LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallDown);
-                    recyclerView.setLayoutAnimation(animation);
-                    dropJ.animate().rotation(180).start();
-                } else {
-                    recyclerView.setVisibility(View.GONE);
-                    LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallUp);
-                    recyclerView.setLayoutAnimation(animation);
-                    dropJ.animate().rotation(360).start();
-                }
+                onClickJ();
+
             }
         });
+        tvTeamJExpand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                onClickJ();
+
+            }
+        });
+        dropJ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                onClickJ();
+            }
+        });
+
 
         menuResponseListt = new ArrayList<>();
         kiiiPresenter = new KiiiPresenter(MainRepositoryInject.provideToInjectK(getApplicationContext()));
@@ -168,15 +176,21 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         relativeTeamK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (recyclerViewKiii.getVisibility() == View.GONE) {
-                    recyclerViewKiii.setVisibility(View.VISIBLE);
-                    LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallDown);
-                    recyclerViewKiii.setLayoutAnimation(animation);
-                    dropKIII.animate().rotation(180).start();
-                } else {
-                    recyclerViewKiii.setVisibility(View.GONE);
-                    dropKIII.animate().rotation(360).start();
-                }
+                onClickKiii();
+            }
+        });
+        tvTeamKIIIExpand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                onClickKiii();
+
+            }
+        });
+        dropKIII.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                onClickKiii();
+
             }
         });
 
@@ -190,15 +204,21 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         relativeTeamT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (recyclerViewT.getVisibility() == View.GONE) {
-                    recyclerViewT.setVisibility(View.VISIBLE);
-                    LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallDown);
-                    recyclerViewT.setLayoutAnimation(animation);
-                    dropT.animate().rotation(180).start();
-                } else {
-                    recyclerViewT.setVisibility(View.GONE);
-                    dropT.animate().rotation(360).start();
-                }
+               onClickT();
+            }
+        });
+        tvTeamTExpand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                onClickT();
+
+            }
+        });
+        dropT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                onClickT();
+
             }
         });
     }
@@ -211,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         jPresenter.onDetachView();
         shimmerViewContainer.stopShimmerAnimation();
         shimmerViewContainer.setVisibility(View.GONE);
+        relativeTeamJ.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -221,6 +242,7 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         kiiiPresenter.onDetachView();
         shimmerViewContainer.stopShimmerAnimation();
         shimmerViewContainer.setVisibility(View.GONE);
+        relativeTeamK.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -231,6 +253,7 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         tPresenter.onDetachView();
         shimmerViewContainer.stopShimmerAnimation();
         shimmerViewContainer.setVisibility(View.GONE);
+        relativeTeamT.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -262,5 +285,43 @@ public class MainActivity extends AppCompatActivity implements JContract.MainVie
         recyclerView.setLayoutAnimation(controller);
         recyclerView.getAdapter().notifyDataSetChanged();
         recyclerView.scheduleLayoutAnimation();
+    }
+
+    private void onClickJ(){
+        if (recyclerView.getVisibility() == View.GONE) {
+            recyclerView.setVisibility(View.VISIBLE);
+            LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallDown);
+            recyclerView.setLayoutAnimation(animation);
+            dropJ.animate().rotation(180).start();
+        } else {
+            recyclerView.setVisibility(View.GONE);
+            LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallUp);
+            recyclerView.setLayoutAnimation(animation);
+            dropJ.animate().rotation(360).start();
+        }
+    }
+
+    private void onClickKiii(){
+        if (recyclerViewKiii.getVisibility() == View.GONE) {
+            recyclerViewKiii.setVisibility(View.VISIBLE);
+            LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallDown);
+            recyclerViewKiii.setLayoutAnimation(animation);
+            dropKIII.animate().rotation(180).start();
+        } else {
+            recyclerViewKiii.setVisibility(View.GONE);
+            dropKIII.animate().rotation(360).start();
+        }
+    }
+
+    private void onClickT(){
+        if (recyclerViewT.getVisibility() == View.GONE) {
+            recyclerViewT.setVisibility(View.VISIBLE);
+            LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), fallDown);
+            recyclerViewT.setLayoutAnimation(animation);
+            dropT.animate().rotation(180).start();
+        } else {
+            recyclerViewT.setVisibility(View.GONE);
+            dropT.animate().rotation(360).start();
+        }
     }
 }

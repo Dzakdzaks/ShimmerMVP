@@ -41,14 +41,15 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_member"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:elevation="5dp"
                 android:padding="20dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/jkt"
+                android:background="?android:attr/selectableItemBackground"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="2dp" />
 
@@ -69,6 +70,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:src="@drawable/twitter" />
 
             <ImageView
@@ -77,6 +79,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:layout_toLeftOf="@+id/img_ig"
                 android:src="@drawable/youtube" />
 
@@ -116,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="#fff"
+                android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:elevation="4dp"
                 android:fontFamily="sans-serif-medium"
@@ -131,7 +134,7 @@
                 android:layout_margin="5dp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="3dp"
-                android:background="#fff"
+                android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:elevation="4dp"
                 android:fontFamily="sans-serif-medium"
@@ -144,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="#fff"
+                android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:elevation="4dp"
                 android:fontFamily="sans-serif-medium"
@@ -159,7 +162,7 @@
                 android:layout_margin="5dp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="3dp"
-                android:background="#fff"
+                android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:elevation="4dp"
                 android:fontFamily="sans-serif-medium"
