@@ -1,4 +1,4 @@
-package id.co.dzaky.shimmermvp.repository.members;
+package id.co.dzaky.shimmermvp.repository.members.teamkiii;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,20 +10,22 @@ import id.co.dzaky.shimmermvp.api.ApiClient;
 import id.co.dzaky.shimmermvp.api.ApiInterface;
 import id.co.dzaky.shimmermvp.model.member.ResponseMember;
 import id.co.dzaky.shimmermvp.model.member.TeamJItem;
+import id.co.dzaky.shimmermvp.model.member.TeamKiiiItem;
+import id.co.dzaky.shimmermvp.repository.members.teamj.JDataResource;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainDataRemote implements MainDataResource {
+public class KiiiDataRemote implements KiiiDataResource{
     Context context;
     ApiInterface apiInterface;
 
-    public MainDataRemote(Context context) {
+    public KiiiDataRemote(Context context) {
         this.context = context;
     }
 
     @Override
-    public void getData(@NonNull final DataCallback dataCallback) {
+    public void getData(@NonNull final KiiiDataResource.DataCallback dataCallback) {
         apiInterface = ApiClient.getInstance();
         final Call<ResponseMember> responseMemberCall = apiInterface.getMember();
         responseMemberCall.enqueue(new Callback<ResponseMember>() {
@@ -32,9 +34,9 @@ public class MainDataRemote implements MainDataResource {
                 try {
                     if (response.isSuccessful()) {
                         ResponseMember member = response.body();
-                        List<TeamJItem> teamJItems = member.getTeamJ();
-                        Log.i("Response Team J ", String.valueOf(teamJItems.toString()));
-                        dataCallback.onSucces(teamJItems, "Success");
+                        List<TeamKiiiItem> teamKiiiItems = member.getTeamKiii();
+                        Log.i("Response Team Kiii ", String.valueOf(teamKiiiItems.toString()));
+                        dataCallback.onSucces(teamKiiiItems, "Success");
                     } else {
                         dataCallback.onError("Null");
                     }

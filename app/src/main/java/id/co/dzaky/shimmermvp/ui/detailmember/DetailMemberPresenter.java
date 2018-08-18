@@ -1,12 +1,10 @@
 package id.co.dzaky.shimmermvp.ui.detailmember;
 
-import java.util.List;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
 
-import id.co.dzaky.shimmermvp.model.detail.DetailItem;
 import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberDataResource;
 import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberRepository;
-import id.co.dzaky.shimmermvp.repository.members.MainRepository;
-import id.co.dzaky.shimmermvp.ui.member.MainContract;
 
 public class DetailMemberPresenter implements DetailMemberContract.DetailMemberPresenter {
 

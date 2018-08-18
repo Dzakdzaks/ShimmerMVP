@@ -1,13 +1,13 @@
-package id.co.dzaky.shimmermvp.ui.member;
+package id.co.dzaky.shimmermvp.ui.member.teamkiii;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,20 +20,19 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.dzaky.shimmermvp.R;
 import id.co.dzaky.shimmermvp.model.member.TeamJItem;
-import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberDataResource;
+import id.co.dzaky.shimmermvp.model.member.TeamKiiiItem;
 import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberRemote;
-import id.co.dzaky.shimmermvp.repository.detailmembers.DetailMemberRepository;
 import id.co.dzaky.shimmermvp.ui.detailmember.DetailMember;
+import id.co.dzaky.shimmermvp.ui.member.teamj.JAdapter;
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
+public class KiiiAdapter extends RecyclerView.Adapter<KiiiAdapter.ViewHolder> {
 
     Context context;
-    List<TeamJItem> menuResponseList;
-    DetailMemberRemote detailMemberRemote;
+    List<TeamKiiiItem> menuResponseList;
 
 
 
-    public MainAdapter(Context context, List<TeamJItem> menuResponseList) {
+    public KiiiAdapter(Context context, List<TeamKiiiItem> menuResponseList) {
         this.context = context;
         this.menuResponseList = menuResponseList;
     }
@@ -61,11 +60,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(@NonNull MainAdapter.ViewHolder viewHolder, final int i) {
-        final TeamJItem teamJ = menuResponseList.get(i);
-        final int id = teamJ.getId();
-        final String img = teamJ.getImage();
-        viewHolder.name.setText(teamJ.getSurname());
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+        final TeamKiiiItem teamKiiiItem = menuResponseList.get(i);
+        final int id = teamKiiiItem.getId();
+        final String img = teamKiiiItem.getImage();
+        setFadeAnimation(viewHolder.itemView);
+        viewHolder.name.setText(teamKiiiItem.getSurname());
         Glide.with(context)
                 .load(img)
                 .into(viewHolder.thumbnail);
@@ -83,5 +83,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return menuResponseList.size();
+    }
+
+    public void setFadeAnimation(View view) {
+        AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(500);
+        view.startAnimation(anim);
     }
 }

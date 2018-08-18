@@ -1,23 +1,23 @@
-package id.co.dzaky.shimmermvp.ui.member;
+package id.co.dzaky.shimmermvp.ui.member.teamj;
 
 import java.util.List;
 
 import id.co.dzaky.shimmermvp.model.member.TeamJItem;
-import id.co.dzaky.shimmermvp.repository.members.MainDataResource;
-import id.co.dzaky.shimmermvp.repository.members.MainRepository;
+import id.co.dzaky.shimmermvp.repository.members.teamj.JDataResource;
+import id.co.dzaky.shimmermvp.repository.members.teamj.JRepository;
 
-public class MainPresenter implements MainContract.MainPresenter{
+public class JPresenter implements JContract.MainPresenter{
 
-    MainContract.MainView mainView;
-    MainRepository mainRepository;
+    JContract.MainView mainView;
+    JRepository mainRepository;
 
-    public MainPresenter(MainRepository mainRepository) {
+    public JPresenter(JRepository mainRepository) {
         this.mainRepository = mainRepository;
     }
 
 
     @Override
-    public void onAttachView(MainContract.MainView view) {
+    public void onAttachView(JContract.MainView view) {
         this.mainView = view;
     }
 
@@ -28,7 +28,7 @@ public class MainPresenter implements MainContract.MainPresenter{
 
     @Override
     public void getData() {
-        mainRepository.getData(new MainDataResource.DataCallback() {
+        mainRepository.getData(new JDataResource.DataCallback() {
             @Override
             public void onSucces(List<TeamJItem> menuResponses, String msg) {
                 mainView.onSucces(menuResponses, msg);

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">JKT 48 Members</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="team_j">TEAM J</string>
+    <string name="team_kiii">TEAM KIII</string>
+    <string name="team_t">TEAM T</string>
     <string name="title_activity_detail_member">DetailMember</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -91,4 +94,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
